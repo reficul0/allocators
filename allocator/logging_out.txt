@@ -1,0 +1,73 @@
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::allocate
+struct std::_List_node<unsigned int,void *> *__thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::allocate(unsigned int) const
+[objects_count = 1]
+
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct
+void __thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct<structstd::_List_node<unsigned int,void *>*,structstd::_List_node<unsigned int,void *>*&>(struct std::_List_node<unsigned int,void *> **,struct std::_List_node<unsigned int,void *> *&) const
+[p = 00AD04C0, args_count = 1]
+
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct
+void __thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct<structstd::_List_node<unsigned int,void *>*,structstd::_List_node<unsigned int,void *>*&>(struct std::_List_node<unsigned int,void *> **,struct std::_List_node<unsigned int,void *> *&) const
+[p = 00AD04C4, args_count = 1]
+
+tools::logging_allocator<struct std::_Container_proxy>::allocate
+struct std::_Container_proxy *__thiscall tools::logging_allocator<struct std::_Container_proxy>::allocate(unsigned int) const
+[objects_count = 1]
+
+tools::logging_allocator<struct std::_Container_proxy>::construct
+void __thiscall tools::logging_allocator<struct std::_Container_proxy>::construct<struct std::_Container_proxy,struct std::_Container_proxy>(struct std::_Container_proxy *,struct std::_Container_proxy &&) const
+[p = 00AD0028, args_count = 1]
+
+-------------cycle begin---------------
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::allocate
+struct std::_List_node<unsigned int,void *> *__thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::allocate(unsigned int) const
+[objects_count = 1]
+
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct
+void __thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct<structstd::_List_node<unsigned int,void *>*,structstd::_List_node<unsigned int,void *>*&>(struct std::_List_node<unsigned int,void *> **,struct std::_List_node<unsigned int,void *> *&) const
+[p = 00AD0300, args_count = 1]
+
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct
+void __thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct<structstd::_List_node<unsigned int,void *>*,structstd::_List_node<unsigned int,void *>*&>(struct std::_List_node<unsigned int,void *> **,struct std::_List_node<unsigned int,void *> *&) const
+[p = 00AD0304, args_count = 1]
+
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct
+void __thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct<unsigned int,unsigned int&>(unsigned int *,unsigned int &) const
+[p = 00AD0308, args_count = 1]
+
+-------------value{0}---------------
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::allocate
+struct std::_List_node<unsigned int,void *> *__thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::allocate(unsigned int) const
+[objects_count = 1]
+
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct
+void __thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct<structstd::_List_node<unsigned int,void *>*,structstd::_List_node<unsigned int,void *>*&>(struct std::_List_node<unsigned int,void *> **,struct std::_List_node<unsigned int,void *> *&) const
+[p = 00AD05D8, args_count = 1]
+
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct
+void __thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct<structstd::_List_node<unsigned int,void *>*,structstd::_List_node<unsigned int,void *>*&>(struct std::_List_node<unsigned int,void *> **,struct std::_List_node<unsigned int,void *> *&) const
+[p = 00AD05DC, args_count = 1]
+
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct
+void __thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct<unsigned int,unsigned int&>(unsigned int *,unsigned int &) const
+[p = 00AD05E0, args_count = 1]
+
+-------------value{1}---------------
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::allocate
+struct std::_List_node<unsigned int,void *> *__thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::allocate(unsigned int) const
+[objects_count = 1]
+
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct
+void __thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct<structstd::_List_node<unsigned int,void *>*,structstd::_List_node<unsigned int,void *>*&>(struct std::_List_node<unsigned int,void *> **,struct std::_List_node<unsigned int,void *> *&) const
+[p = 00AD0370, args_count = 1]
+
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct
+void __thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct<structstd::_List_node<unsigned int,void *>*,structstd::_List_node<unsigned int,void *>*&>(struct std::_List_node<unsigned int,void *> **,struct std::_List_node<unsigned int,void *> *&) const
+[p = 00AD0374, args_count = 1]
+
+tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct
+void __thiscall tools::logging_allocator<struct std::_List_node<unsigned int,void *> >::construct<unsigned int,unsigned int&>(unsigned int *,unsigned int &) const
+[p = 00AD0378, args_count = 1]
+
+-------------value{2}---------------
+-------------cycle end---------------
