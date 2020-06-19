@@ -14,11 +14,9 @@
 #include "reserve_allocator.h"
 
 struct hard { 
-	int value1, 
-		value2; 
-	hard(int value1_, int value2_) 
+	int value1; 
+	hard(int value1_) 
 		: value1(value1_)
-		, value2(value2_) 
 	{
 	}
 };
@@ -26,9 +24,9 @@ struct hard {
 template<typename Allocator>
 void test(std::string test_file_name)
 {
-	std::ofstream out(test_file_name); //откроем файл для вывод
-	std::streambuf *coutbuf = std::cout.rdbuf(); //запомним старый буфер
-	std::cout.rdbuf(out.rdbuf()); //и теперь все будет в файл out.txt!
+	std::ofstream out(test_file_name); 
+	std::streambuf *coutbuf = std::cout.rdbuf();
+	std::cout.rdbuf(out.rdbuf());
 
 	auto values = std::list<typename Allocator::value_type, Allocator>{};
 
@@ -47,9 +45,9 @@ void test(std::string test_file_name)
 
 int main()
 {
-	test<tools::logging_allocator<size_t>>("logging_out.txt");
+	test<tools::logging_allocator<hard>>("logging_out.txt");
 
-	test<tools::reserve_allocator<size_t, 3>>("reserve_out.txt");
+	test<tools::reserve_allocator<hard, 3>>("reserve_out.txt");
 	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
 	_CrtDumpMemoryLeaks();
 }

@@ -7,6 +7,8 @@
 #include <type_traits>
 #include <memory>
 
+#define LOG_DEBUG_INFO_TO_COUT
+
 namespace tools
 {
 	template<typename T, size_t reserve_so_much>
@@ -14,7 +16,6 @@ namespace tools
 	{
 	public:
 		using value_type = T;
-#pragma region for_map
 		using pointer = typename std::add_pointer<T>::type;
 		using const_pointer = typename std::add_const<pointer>::type;
 		using reference = typename std::add_lvalue_reference<pointer>::type;
@@ -24,11 +25,10 @@ namespace tools
 		struct rebind
 		{
 			// Некоторые компиляторы могут сгенерировать ребиндер самостоятельно, 
-			// но нам надо чтобы он был ане зависимости от компилятора	, 
+			// но нам надо чтобы он был ане зависимости от компилятора, 
 			// поэтому напишем его сами.
 			using other = reserve_allocator<U, reserve_so_much>;
 		};
-#pragma endregion
 
 		mutable size_t used_count;
 		mutable std::array<pointer, reserve_so_much> reserved_memory;
@@ -58,11 +58,12 @@ namespace tools
 		{
 			using return_type = decltype(allocate(objects_count));
 
+#ifdef LOG_DEBUG_INFO_TO_COUT
 			std::cout << __FUNCTION__ << std::endl
 				<< __FUNCSIG__ << std::endl
-				<< "[objects_count = " << objects_count << "]" 
+				<< "[objects_count = " << objects_count << "]"
 				<< std::endl << std::endl;
-
+#endif
 			if (_has_free_reserved_memory(objects_count))
 				return _get_next_from_reserved_memory(objects_count);
 
@@ -77,50 +78,59 @@ namespace tools
 		}
 		void deallocate(pointer p, std::size_t objects_count) const
 		{
+#ifdef LOG_DEBUG_INFO_TO_COUT
 			std::cout << __FUNCTION__ << std::endl
 				<< __FUNCSIG__ << std::endl
-				<< "[objects_count = " << objects_count 
-				<< ", p = "<< p << "]"
+				<< "[objects_count = " << objects_count
+				<< ", p = " << p << "]"
 				<< std::endl << std::endl;
+#endif
 			std::free(p);
 		}
 
 		template<typename U, typename ...Args>
 		void construct(U* p, Args&& ...args) const
 		{
+#ifdef LOG_DEBUG_INFO_TO_COUT
 			std::cout << __FUNCTION__ << std::endl
 				<< __FUNCSIG__ << std::endl
-				<< "[p = " << p 
+				<< "[p = " << p
 				<< ", args_count = " << sizeof...(args) << "]"
 				<< std::endl << std::endl;
+#endif
+
 			new(p) U(std::forward<Args>(args)...);
 		}
 		void destroy(pointer p) const
 		{
+#ifdef LOG_DEBUG_INFO_TO_COUT
 			std::cout << __FUNCTION__ << std::endl
 				<< __FUNCSIG__ << std::endl
 				<< "[p = " << p << "]"
-				<< std::endl << std::endl;
+				<< std::endl << std::endl; 
+#endif
 			p->~T();
 		}
 	private:
 		bool _has_free_reserved_memory(std::size_t objects_count) const
 		{
-			/*std::cout << __FUNCTION__ << std::endl
+#ifdef LOG_DEBUG_INFO_TO_COUT
+			std::cout << "-" << __FUNCTION__ << std::endl
 				<< __FUNCSIG__ << std::endl
 				<< "[objects_count = " << objects_count << "]"
-				<< std::endl << std::endl;*/
-
+				<< std::endl << std::endl;
+#endif
 			auto now_free = reserve_so_much - used_count;
 			return now_free != 0 && now_free >= objects_count;
 		}
 		pointer _get_next_from_reserved_memory(std::size_t objects_count) const
 		{
-			/*std::cout << __FUNCTION__ << std::endl
+#ifdef LOG_DEBUG_INFO_TO_COUT
+			std::cout << "-" << __FUNCTION__ << std::endl
 				<< __FUNCSIG__ << std::endl
 				<< "[objects_count = " << objects_count << "]"
-				<< std::endl << std::endl;*/
-
+				<< std::endl << std::endl;
+#endif
 			auto &ptr_in_reserved_memory = reserved_memory[used_count];
 			auto ptr_for_returning = ptr_in_reserved_memory;
 
