@@ -45,9 +45,8 @@ void test(std::string test_file_name)
 
 int main()
 {
-	test<tools::logging_allocator<hard>>("logging_out.txt");
-
-	test<tools::reserve_allocator<hard, 3>>("reserve_out.txt");
+	test<tools::logging_allocator<int>>("logging_out.txt");
+	test<tools::reserve_allocator<int, 3>>("reserve_out.txt");
 	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
 	_CrtDumpMemoryLeaks();
 }

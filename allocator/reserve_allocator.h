@@ -7,13 +7,20 @@
 #include <type_traits>
 #include <memory>
 
+#include "arena.h"
+
 #define LOG_DEBUG_INFO_TO_COUT
 
 namespace tools
 {
-	template<typename T, size_t reserve_so_much>
-	class reserve_allocator
+	template<
+		typename T, 
+		size_t reserve_so_much_objects, 
+		std::size_t alignment = alignof(std::max_align_t)
+	> class reserve_allocator
 	{
+		// GCC extension 5.15 Structures With No Members
+		static_assert(sizeof(T) != 0, "Structures that have zero size are not supported");
 	public:
 		using value_type = T;
 		using pointer = typename std::add_pointer<T>::type;
@@ -24,57 +31,45 @@ namespace tools
 		template<typename U>
 		struct rebind
 		{
-			// Некоторые компиляторы могут сгенерировать ребиндер самостоятельно, 
-			// но нам надо чтобы он был ане зависимости от компилятора, 
-			// поэтому напишем его сами.
-			using other = reserve_allocator<U, reserve_so_much>;
+			using other = reserve_allocator<U, reserve_so_much_objects, alignment>;
 		};
 
-		mutable size_t used_count;
-		mutable std::array<pointer, reserve_so_much> reserved_memory;
-
+		static auto constexpr alignment = alignment;
+		static auto constexpr size = reserve_so_much_objects;
+		using memory_area_type = memory_area<size, alignment>;
+	private:
+		std::unique_ptr<memory_area_type> _reserved_memory;
+	public:
 		reserve_allocator()
-			: used_count(0)
+			: _reserved_memory(
+				std::make_unique<typename decltype(_reserved_memory)::element_type>()
+			)
 		{
-			for(auto &p : reserved_memory)
-				p = static_cast<pointer>(std::malloc(sizeof(T)));
 		}
-		~reserve_allocator()
-		{
-			for (size_t i = used_count; i < reserve_so_much; ++i)
-				std::free(reserved_memory[i]);
-		}
+		~reserve_allocator() = default;
 
 		template<
 			typename U, 
-			size_t UReserved
-		>
-		reserve_allocator(reserve_allocator<U, UReserved> const & other)
+			size_t UReserved,
+			std::size_t UAlignment
+		> reserve_allocator(reserve_allocator<U, UReserved, UAlignment> const & other)
 			: reserve_allocator()
 		{
 		}
 
 		pointer allocate(std::size_t objects_count) const
 		{
-			using return_type = decltype(allocate(objects_count));
-
 #ifdef LOG_DEBUG_INFO_TO_COUT
 			std::cout << __FUNCTION__ << std::endl
 				<< __FUNCSIG__ << std::endl
 				<< "[objects_count = " << objects_count << "]"
 				<< std::endl << std::endl;
 #endif
-			if (_has_free_reserved_memory(objects_count))
-				return _get_next_from_reserved_memory(objects_count);
-
-			if (objects_count > std::numeric_limits<std::size_t>::max() / sizeof(T))
-				throw std::bad_alloc();
-
-			auto p = static_cast<return_type>(
-				std::malloc(objects_count * sizeof(T))
+			return reinterpret_cast<pointer>(
+				_reserved_memory->template allocate<alignof(T)>(
+					objects_count * sizeof(T)
+				)
 			);
-			return p != nullptr ? p 
-				: throw std::bad_alloc{};
 		}
 		void deallocate(pointer p, std::size_t objects_count) const
 		{
@@ -85,7 +80,10 @@ namespace tools
 				<< ", p = " << p << "]"
 				<< std::endl << std::endl;
 #endif
-			std::free(p);
+			_reserved_memory->deallocate(
+				reinterpret_cast<uint8_t*>(p),
+				objects_count * sizeof(T)
+			);
 		}
 
 		template<typename U, typename ...Args>
@@ -110,36 +108,6 @@ namespace tools
 				<< std::endl << std::endl; 
 #endif
 			p->~T();
-		}
-	private:
-		bool _has_free_reserved_memory(std::size_t objects_count) const
-		{
-#ifdef LOG_DEBUG_INFO_TO_COUT
-			std::cout << "-" << __FUNCTION__ << std::endl
-				<< __FUNCSIG__ << std::endl
-				<< "[objects_count = " << objects_count << "]"
-				<< std::endl << std::endl;
-#endif
-			auto now_free = reserve_so_much - used_count;
-			return now_free != 0 && now_free >= objects_count;
-		}
-		pointer _get_next_from_reserved_memory(std::size_t objects_count) const
-		{
-#ifdef LOG_DEBUG_INFO_TO_COUT
-			std::cout << "-" << __FUNCTION__ << std::endl
-				<< __FUNCSIG__ << std::endl
-				<< "[objects_count = " << objects_count << "]"
-				<< std::endl << std::endl;
-#endif
-			auto &ptr_in_reserved_memory = reserved_memory[used_count];
-			auto ptr_for_returning = ptr_in_reserved_memory;
-
-			auto new_size = used_count + objects_count;
-			for(size_t i = used_count; i < new_size; ++i)
-				reserved_memory[i] = nullptr;
-			used_count = new_size;
-
-			return ptr_for_returning;
 		}
 	};
 }

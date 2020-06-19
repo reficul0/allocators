@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="arena.h" />
     <ClInclude Include="logging_allocator.h" />
     <ClInclude Include="reserve_allocator.h" />
     <ClInclude Include="pch.h" />

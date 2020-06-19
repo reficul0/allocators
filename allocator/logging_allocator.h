@@ -12,6 +12,8 @@ namespace tools
 	template<typename T>
 	class logging_allocator
 	{
+		// GCC extension 5.15 Structures With No Members
+		static_assert(sizeof(T) != 0, "Structures that have zero size are not supported");
 	public:
 		using value_type = T;
 #pragma region for_map

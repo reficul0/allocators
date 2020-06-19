@@ -1,14 +1,14 @@
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::allocate
-struct std::_List_node<struct hard,void *> *__cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::allocate(unsigned __int64) const
+tools::logging_allocator<struct std::_List_node<int,void *> >::allocate
+struct std::_List_node<int,void *> *__cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::allocate(unsigned __int64) const
 [objects_count = 1]
 
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct
-void __cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC60510, args_count = 1]
+tools::logging_allocator<struct std::_List_node<int,void *> >::construct
+void __cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9970, args_count = 1]
 
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct
-void __cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC60518, args_count = 1]
+tools::logging_allocator<struct std::_List_node<int,void *> >::construct
+void __cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9978, args_count = 1]
 
 tools::logging_allocator<struct std::_Container_proxy>::allocate
 struct std::_Container_proxy *__cdecl tools::logging_allocator<struct std::_Container_proxy>::allocate(unsigned __int64) const
@@ -16,58 +16,58 @@ struct std::_Container_proxy *__cdecl tools::logging_allocator<struct std::_Cont
 
 tools::logging_allocator<struct std::_Container_proxy>::construct
 void __cdecl tools::logging_allocator<struct std::_Container_proxy>::construct<struct std::_Container_proxy,struct std::_Container_proxy>(struct std::_Container_proxy *,struct std::_Container_proxy &&) const
-[p = 000001B27AC65220, args_count = 1]
+[p = 000001F6894D0110, args_count = 1]
 
 -------------cycle begin---------------
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::allocate
-struct std::_List_node<struct hard,void *> *__cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::allocate(unsigned __int64) const
+tools::logging_allocator<struct std::_List_node<int,void *> >::allocate
+struct std::_List_node<int,void *> *__cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::allocate(unsigned __int64) const
 [objects_count = 1]
 
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct
-void __cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC60570, args_count = 1]
+tools::logging_allocator<struct std::_List_node<int,void *> >::construct
+void __cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9A30, args_count = 1]
 
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct
-void __cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC60578, args_count = 1]
+tools::logging_allocator<struct std::_List_node<int,void *> >::construct
+void __cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9A38, args_count = 1]
 
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct
-void __cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct<struct hard,unsigned __int64&>(struct hard *,unsigned __int64 &) const
-[p = 000001B27AC60580, args_count = 1]
+tools::logging_allocator<struct std::_List_node<int,void *> >::construct
+void __cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::construct<int,unsigned __int64&>(int *,unsigned __int64 &) const
+[p = 000001F6894C9A40, args_count = 1]
 
 -------------value{0}---------------
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::allocate
-struct std::_List_node<struct hard,void *> *__cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::allocate(unsigned __int64) const
+tools::logging_allocator<struct std::_List_node<int,void *> >::allocate
+struct std::_List_node<int,void *> *__cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::allocate(unsigned __int64) const
 [objects_count = 1]
 
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct
-void __cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC605D0, args_count = 1]
+tools::logging_allocator<struct std::_List_node<int,void *> >::construct
+void __cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9D90, args_count = 1]
 
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct
-void __cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC605D8, args_count = 1]
+tools::logging_allocator<struct std::_List_node<int,void *> >::construct
+void __cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9D98, args_count = 1]
 
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct
-void __cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct<struct hard,unsigned __int64&>(struct hard *,unsigned __int64 &) const
-[p = 000001B27AC605E0, args_count = 1]
+tools::logging_allocator<struct std::_List_node<int,void *> >::construct
+void __cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::construct<int,unsigned __int64&>(int *,unsigned __int64 &) const
+[p = 000001F6894C9DA0, args_count = 1]
 
 -------------value{1}---------------
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::allocate
-struct std::_List_node<struct hard,void *> *__cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::allocate(unsigned __int64) const
+tools::logging_allocator<struct std::_List_node<int,void *> >::allocate
+struct std::_List_node<int,void *> *__cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::allocate(unsigned __int64) const
 [objects_count = 1]
 
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct
-void __cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC686E0, args_count = 1]
+tools::logging_allocator<struct std::_List_node<int,void *> >::construct
+void __cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9A90, args_count = 1]
 
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct
-void __cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC686E8, args_count = 1]
+tools::logging_allocator<struct std::_List_node<int,void *> >::construct
+void __cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9A98, args_count = 1]
 
-tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct
-void __cdecl tools::logging_allocator<struct std::_List_node<struct hard,void *> >::construct<struct hard,unsigned __int64&>(struct hard *,unsigned __int64 &) const
-[p = 000001B27AC686F0, args_count = 1]
+tools::logging_allocator<struct std::_List_node<int,void *> >::construct
+void __cdecl tools::logging_allocator<struct std::_List_node<int,void *> >::construct<int,unsigned __int64&>(int *,unsigned __int64 &) const
+[p = 000001F6894C9AA0, args_count = 1]
 
 -------------value{2}---------------
 -------------cycle end---------------

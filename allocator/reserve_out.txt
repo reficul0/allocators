@@ -1,109 +1,73 @@
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::allocate
-struct std::_List_node<struct hard,void *> *__cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::allocate(unsigned __int64) const
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::allocate
+struct std::_List_node<int,void *> *__cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::allocate(unsigned __int64) const
 [objects_count = 1]
 
--tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_has_free_reserved_memory
-bool __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_has_free_reserved_memory(unsigned __int64) const
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct
+void __cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9A30, args_count = 1]
+
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct
+void __cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9A38, args_count = 1]
+
+tools::reserve_allocator<struct std::_Container_proxy,3,8>::allocate
+struct std::_Container_proxy *__cdecl tools::reserve_allocator<struct std::_Container_proxy,3,8>::allocate(unsigned __int64) const
 [objects_count = 1]
 
--tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_get_next_from_reserved_memory
-struct std::_List_node<struct hard,void *> *__cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_get_next_from_reserved_memory(unsigned __int64) const
-[objects_count = 1]
-
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct
-void __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC60510, args_count = 1]
-
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct
-void __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC60518, args_count = 1]
-
-tools::reserve_allocator<struct std::_Container_proxy,3>::allocate
-struct std::_Container_proxy *__cdecl tools::reserve_allocator<struct std::_Container_proxy,3>::allocate(unsigned __int64) const
-[objects_count = 1]
-
--tools::reserve_allocator<struct std::_Container_proxy,3>::_has_free_reserved_memory
-bool __cdecl tools::reserve_allocator<struct std::_Container_proxy,3>::_has_free_reserved_memory(unsigned __int64) const
-[objects_count = 1]
-
--tools::reserve_allocator<struct std::_Container_proxy,3>::_get_next_from_reserved_memory
-struct std::_Container_proxy *__cdecl tools::reserve_allocator<struct std::_Container_proxy,3>::_get_next_from_reserved_memory(unsigned __int64) const
-[objects_count = 1]
-
-tools::reserve_allocator<struct std::_Container_proxy,3>::construct
-void __cdecl tools::reserve_allocator<struct std::_Container_proxy,3>::construct<struct std::_Container_proxy,struct std::_Container_proxy>(struct std::_Container_proxy *,struct std::_Container_proxy &&) const
-[p = 000001B27AC64780, args_count = 1]
+tools::reserve_allocator<struct std::_Container_proxy,3,8>::construct
+void __cdecl tools::reserve_allocator<struct std::_Container_proxy,3,8>::construct<struct std::_Container_proxy,struct std::_Container_proxy>(struct std::_Container_proxy *,struct std::_Container_proxy &&) const
+[p = 000001F6894D0340, args_count = 1]
 
 -------------cycle begin---------------
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::allocate
-struct std::_List_node<struct hard,void *> *__cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::allocate(unsigned __int64) const
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::allocate
+struct std::_List_node<int,void *> *__cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::allocate(unsigned __int64) const
 [objects_count = 1]
 
--tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_has_free_reserved_memory
-bool __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_has_free_reserved_memory(unsigned __int64) const
-[objects_count = 1]
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct
+void __cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9A90, args_count = 1]
 
--tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_get_next_from_reserved_memory
-struct std::_List_node<struct hard,void *> *__cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_get_next_from_reserved_memory(unsigned __int64) const
-[objects_count = 1]
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct
+void __cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9A98, args_count = 1]
 
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct
-void __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC60570, args_count = 1]
-
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct
-void __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC60578, args_count = 1]
-
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct
-void __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct<struct hard,unsigned __int64&>(struct hard *,unsigned __int64 &) const
-[p = 000001B27AC60580, args_count = 1]
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct
+void __cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct<int,unsigned __int64&>(int *,unsigned __int64 &) const
+[p = 000001F6894C9AA0, args_count = 1]
 
 -------------value{0}---------------
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::allocate
-struct std::_List_node<struct hard,void *> *__cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::allocate(unsigned __int64) const
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::allocate
+struct std::_List_node<int,void *> *__cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::allocate(unsigned __int64) const
 [objects_count = 1]
 
--tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_has_free_reserved_memory
-bool __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_has_free_reserved_memory(unsigned __int64) const
-[objects_count = 1]
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct
+void __cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9C70, args_count = 1]
 
--tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_get_next_from_reserved_memory
-struct std::_List_node<struct hard,void *> *__cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_get_next_from_reserved_memory(unsigned __int64) const
-[objects_count = 1]
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct
+void __cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9C78, args_count = 1]
 
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct
-void __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC605D0, args_count = 1]
-
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct
-void __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC605D8, args_count = 1]
-
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct
-void __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct<struct hard,unsigned __int64&>(struct hard *,unsigned __int64 &) const
-[p = 000001B27AC605E0, args_count = 1]
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct
+void __cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct<int,unsigned __int64&>(int *,unsigned __int64 &) const
+[p = 000001F6894C9C80, args_count = 1]
 
 -------------value{1}---------------
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::allocate
-struct std::_List_node<struct hard,void *> *__cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::allocate(unsigned __int64) const
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::allocate
+struct std::_List_node<int,void *> *__cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::allocate(unsigned __int64) const
 [objects_count = 1]
 
--tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_has_free_reserved_memory
-bool __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::_has_free_reserved_memory(unsigned __int64) const
-[objects_count = 1]
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct
+void __cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9D90, args_count = 1]
 
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct
-void __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC683E0, args_count = 1]
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct
+void __cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct<structstd::_List_node<int,void *>*,structstd::_List_node<int,void *>*&>(struct std::_List_node<int,void *> **,struct std::_List_node<int,void *> *&) const
+[p = 000001F6894C9D98, args_count = 1]
 
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct
-void __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct<structstd::_List_node<struct hard,void *>*,structstd::_List_node<struct hard,void *>*&>(struct std::_List_node<struct hard,void *> **,struct std::_List_node<struct hard,void *> *&) const
-[p = 000001B27AC683E8, args_count = 1]
-
-tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct
-void __cdecl tools::reserve_allocator<struct std::_List_node<struct hard,void *>,3>::construct<struct hard,unsigned __int64&>(struct hard *,unsigned __int64 &) const
-[p = 000001B27AC683F0, args_count = 1]
+tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct
+void __cdecl tools::reserve_allocator<struct std::_List_node<int,void *>,3,8>::construct<int,unsigned __int64&>(int *,unsigned __int64 &) const
+[p = 000001F6894C9DA0, args_count = 1]
 
 -------------value{2}---------------
 -------------cycle end---------------
